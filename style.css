@@ -311,3 +311,336 @@ body{
     font-size:22px;
 
 }
+/* ================= PASSWORD ================= */
+
+#password-screen{
+
+    background:
+    linear-gradient(
+    135deg,
+    #ffd6ea,
+    #ffeef7,
+    #fff7f2);
+
+}
+
+.password-box{
+
+    width:90%;
+    max-width:520px;
+
+    background:rgba(255,255,255,.95);
+
+    backdrop-filter:blur(10px);
+
+    padding:40px;
+
+    border-radius:35px;
+
+    box-shadow:
+    0 20px 50px rgba(255,105,180,.2);
+
+}
+
+.big-heart{
+
+    margin-bottom:15px;
+
+}
+
+#mainHeart{
+
+    font-size:90px;
+
+    transition:.4s;
+
+}
+
+.password-box h2{
+
+    color:#ff5c97;
+
+    margin-bottom:10px;
+
+}
+
+.password-box p{
+
+    color:#666;
+
+    margin-bottom:20px;
+
+}
+
+#passwordDisplay{
+
+    height:55px;
+
+    background:#fff;
+
+    border-radius:18px;
+
+    display:flex;
+
+    justify-content:center;
+    align-items:center;
+
+    font-size:28px;
+
+    letter-spacing:8px;
+
+    margin-bottom:20px;
+
+    color:#ff5c97;
+
+}
+
+/* ================= NUMBER PAD ================= */
+
+.number-pad{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(3,1fr);
+
+    gap:12px;
+
+}
+
+.number-pad button{
+
+    height:70px;
+
+    border:none;
+
+    border-radius:20px;
+
+    background:white;
+
+    font-size:24px;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+    box-shadow:
+    0 5px 15px rgba(0,0,0,.08);
+
+}
+
+.number-pad button:hover{
+
+    transform:translateY(-4px);
+
+}
+
+.number-pad button:active{
+
+    transform:scale(.95);
+
+}
+
+/* ================= GIFT ================= */
+
+#gift-screen{
+
+    background:
+    linear-gradient(
+    135deg,
+    #fff0f7,
+    #ffe2ef);
+
+}
+
+.gift-container{
+
+    text-align:center;
+
+}
+
+#giftBox{
+
+    font-size:160px;
+
+    cursor:pointer;
+
+    animation:
+    bounceGift 2s infinite;
+
+    transition:.4s;
+
+}
+
+@keyframes bounceGift{
+
+    0%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-15px);
+    }
+
+    100%{
+        transform:translateY(0);
+    }
+
+}
+
+.gift-container h2{
+
+    color:#ff5c97;
+
+    margin-top:20px;
+
+}
+
+.gift-container p{
+
+    color:#777;
+
+    margin-top:10px;
+
+}
+
+/* ================= WELCOME ================= */
+
+#welcome-screen{
+
+    background:
+    linear-gradient(
+    135deg,
+    #fff6fb,
+    #fff1f5);
+
+}
+
+.content{
+
+    max-width:900px;
+
+    padding:20px;
+
+}
+
+.content h1{
+
+    color:#ff5c97;
+
+    margin-bottom:20px;
+
+    font-size:42px;
+
+}
+
+.content p{
+
+    color:#666;
+
+    font-size:20px;
+
+}
+
+/* ================= BUTTON ================= */
+
+.next-btn{
+
+    margin-top:35px;
+
+    border:none;
+
+    padding:
+    15px 35px;
+
+    border-radius:30px;
+
+    background:#ff7ab5;
+
+    color:white;
+
+    font-size:18px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.next-btn:hover{
+
+    transform:translateY(-3px);
+
+}
+
+/* ================= TIMELINE ================= */
+
+#timeline-screen{
+
+    background:
+    linear-gradient(
+    135deg,
+    #fff7fb,
+    #fff1f7);
+
+}
+
+.timeline{
+
+    margin-top:30px;
+
+}
+
+.event{
+
+    background:white;
+
+    padding:25px;
+
+    margin:18px;
+
+    border-radius:25px;
+
+    color:#444;
+
+    box-shadow:
+    0 10px 25px rgba(0,0,0,.08);
+
+}
+
+/* ================= FLOWERS ================= */
+
+.flower{
+
+    position:fixed;
+
+    top:-50px;
+
+    font-size:24px;
+
+    pointer-events:none;
+
+    animation:
+    fall linear forwards;
+
+}
+
+@keyframes fall{
+
+    from{
+
+        transform:
+        translateY(-50px)
+        rotate(0deg);
+
+    }
+
+    to{
+
+        transform:
+        translateY(120vh)
+        rotate(360deg);
+
+    }
+
+}
