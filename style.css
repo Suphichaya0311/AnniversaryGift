@@ -1,42 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
 
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:'Segoe UI',sans-serif;
 }
 
 body{
-    background:linear-gradient(135deg,#ffd6e7,#fff3f8,#fef6e4);
-    min-height:100vh;
+    font-family:'Itim',cursive;
+    background:#0f0b1d;
     overflow:hidden;
+    color:white;
 }
 
-/* Loading */
+/* ================= LOADING ================= */
 
 #loading-screen{
     position:fixed;
     inset:0;
-    background:#fff;
+    background:#0f0b1d;
     display:flex;
     flex-direction:column;
     justify-content:center;
     align-items:center;
-    z-index:9999;
+    z-index:99999;
 }
 
 .heart-loader{
-    font-size:70px;
+    font-size:80px;
     animation:heartbeat 1s infinite;
 }
 
-@keyframes heartbeat{
-    0%{transform:scale(1);}
-    50%{transform:scale(1.2);}
-    100%{transform:scale(1);}
+#loading-screen p{
+    margin-top:15px;
+    color:#ffd5ec;
+    font-size:20px;
 }
 
-/* Screens */
+@keyframes heartbeat{
+
+    0%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.25);
+    }
+
+    100%{
+        transform:scale(1);
+    }
+
+}
+
+/* ================= SCREEN ================= */
 
 .screen{
     display:none;
@@ -45,115 +62,252 @@ body{
     justify-content:center;
     align-items:center;
     text-align:center;
-    padding:20px;
+    position:relative;
 }
 
 .screen.active{
     display:flex;
 }
 
-/* Password */
+/* ================= INTRO ================= */
 
-.password-box{
+#intro-screen{
+    background:
+    radial-gradient(circle at top,
+    #36224e 0%,
+    #1b1431 40%,
+    #0f0b1d 100%);
+    flex-direction:column;
+}
+
+/* ================= STARS ================= */
+
+.stars{
+    position:absolute;
+    inset:0;
+    overflow:hidden;
+}
+
+.stars::before{
+    content:"";
+    position:absolute;
+    width:2px;
+    height:2px;
     background:white;
-    padding:40px;
-    border-radius:30px;
-    box-shadow:0 15px 40px rgba(0,0,0,.1);
-    max-width:500px;
-    width:90%;
+
+    box-shadow:
+    100px 100px white,
+    200px 300px white,
+    350px 200px white,
+    600px 150px white,
+    700px 400px white,
+    900px 100px white,
+    1000px 500px white,
+    1200px 250px white,
+    1400px 100px white;
+
+    animation:twinkle 3s infinite;
 }
 
-.password-box h2{
-    margin:15px 0;
-    color:#ff5f99;
+@keyframes twinkle{
+
+    0%{
+        opacity:.3;
+    }
+
+    50%{
+        opacity:1;
+    }
+
+    100%{
+        opacity:.3;
+    }
+
 }
 
-.password-box p{
-    margin:10px 0;
+/* ================= PHOTO HEART ================= */
+
+#photo-heart-container{
+
+    position:relative;
+
+    width:700px;
+    height:500px;
+
 }
 
-.password-box input{
-    width:100%;
-    padding:15px;
-    border:none;
-    border-radius:15px;
-    margin-top:20px;
-    background:#f6f6f6;
+.heart-photo{
+
+    position:absolute;
+
+    width:95px;
+    height:130px;
+
+    object-fit:cover;
+
+    border:8px solid white;
+
+    border-radius:12px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.4);
+
+    transition:1.5s;
+
 }
 
-.password-box button{
-    margin-top:20px;
-    padding:14px 30px;
-    border:none;
-    border-radius:20px;
-    background:#ff7eb3;
-    color:white;
-    cursor:pointer;
+/* ตำแหน่งหัวใจ */
+
+.photo1{top:40px;left:250px;}
+.photo2{top:0px;left:170px;}
+.photo3{top:0px;left:330px;}
+.photo4{top:80px;left:120px;}
+.photo5{top:80px;left:380px;}
+
+.photo6{top:160px;left:80px;}
+.photo7{top:160px;left:420px;}
+
+.photo8{top:250px;left:150px;}
+.photo9{top:250px;left:350px;}
+
+.photo10{top:330px;left:210px;}
+.photo11{top:330px;left:300px;}
+
+.photo12{top:410px;left:250px;}
+
+.photo13{top:120px;left:250px;}
+.photo14{top:220px;left:250px;}
+.photo15{top:300px;left:250px;}
+
+/* ================= MESSAGE ================= */
+
+#intro-message{
+
+    margin-top:25px;
+
+    opacity:0;
+
+    animation:showText 2s forwards;
+    animation-delay:2s;
+
 }
 
-/* Gift */
+#intro-message h2{
 
-.gift-container{
-    text-align:center;
+    color:#ffd5ec;
+    font-size:36px;
+
 }
 
-#giftBox{
+#intro-message h3{
+
+    margin-top:10px;
+    color:#ffffff;
+
+}
+
+@keyframes showText{
+
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+/* ================= GLASS HEART ================= */
+
+#glass-heart{
+
+    margin-top:35px;
+
+    opacity:0;
+
+    animation:showHeart 2s forwards;
+    animation-delay:4s;
+
+}
+
+#heart-fill{
+
     font-size:120px;
+
     cursor:pointer;
-    transition:.3s;
+
+    transition:.4s;
+
 }
 
-#giftBox:hover{
+#heart-fill:hover{
+
     transform:scale(1.1);
+
 }
 
-/* Content */
+#glass-heart p{
 
-.content{
-    max-width:900px;
+    margin-top:15px;
+
+    color:#ffd5ec;
+
+    font-size:22px;
+
 }
 
-.content h1{
-    color:#ff5f99;
-    margin-bottom:20px;
-}
+#glass-heart span{
 
-.next-btn{
-    margin-top:30px;
-    padding:15px 35px;
-    border:none;
-    border-radius:25px;
-    background:#ff7eb3;
+    display:block;
+
+    margin-top:10px;
+
     color:white;
-    cursor:pointer;
+
 }
 
-/* Timeline */
+@keyframes showHeart{
 
-.timeline{
-    margin-top:30px;
+    from{
+
+        opacity:0;
+        transform:translateY(40px);
+
+    }
+
+    to{
+
+        opacity:1;
+        transform:translateY(0);
+
+    }
+
 }
 
-.event{
-    background:white;
-    padding:20px;
-    margin:20px;
-    border-radius:20px;
-    box-shadow:0 5px 15px rgba(0,0,0,.08);
-}
-
-/* Music */
+/* ================= MUSIC ================= */
 
 #musicBtn{
+
     position:fixed;
+
     top:20px;
     right:20px;
-    width:55px;
-    height:55px;
+
+    width:60px;
+    height:60px;
+
     border:none;
+
     border-radius:50%;
+
     background:white;
+
     cursor:pointer;
-    z-index:1000;
-    font-size:20px;
+
+    z-index:9999;
+
+    font-size:22px;
+
 }
