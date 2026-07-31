@@ -1,127 +1,240 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>To The One Who Makes My World Better</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="style.css">
+<title>For Fourwin ❤️</title>
+
+<link rel="stylesheet" href="style.css">
+
 </head>
 <body>
 
-    <!-- Loading -->
-    <div id="loading-screen">
-        <div class="heart-loader">❤️</div>
-        <p>Loading Memories...</p>
+<!-- ================= LOADING ================= -->
+
+<div id="loading-screen">
+
+    <div class="heart-loader">❤️</div>
+
+    <p>กำลังโหลดความทรงจำของเรา...</p>
+
+</div>
+
+<!-- ================= MUSIC ================= -->
+
+<audio id="bgMusic" loop>
+    <source src="song.mp3" type="audio/mpeg">
+</audio>
+
+<button id="musicBtn">🎵</button>
+
+<!-- ================= INTRO ================= -->
+
+<section id="intro-screen" class="screen active">
+
+    <div class="stars"></div>
+
+    <div id="photo-heart-container">
+
+        <img src="images/memory01.jpg" class="heart-photo photo1">
+        <img src="images/memory02.jpg" class="heart-photo photo2">
+        <img src="images/memory03.jpg" class="heart-photo photo3">
+        <img src="images/memory04.jpg" class="heart-photo photo4">
+        <img src="images/memory06.jpg" class="heart-photo photo5">
+
+        <img src="images/memory07.jpg" class="heart-photo photo6">
+        <img src="images/memory09.jpg" class="heart-photo photo7">
+        <img src="images/memory14.jpg" class="heart-photo photo8">
+        <img src="images/memory19.jpg" class="heart-photo photo9">
+        <img src="images/memory20.jpg" class="heart-photo photo10">
+
+        <img src="images/memory39.jpg" class="heart-photo photo11">
+        <img src="images/memory53.jpg" class="heart-photo photo12">
+        <img src="images/memory58.jpg" class="heart-photo photo13">
+        <img src="images/memory59.jpg" class="heart-photo photo14">
+        <img src="images/memory60.jpg" class="heart-photo photo15">
+
     </div>
 
-    <!-- Music -->
-    <audio id="bgMusic" loop>
-        <source src="song.mp3" type="audio/mpeg">
-    </audio>
+    <div id="intro-message">
 
-    <!-- Music Button -->
-    <button id="musicBtn">🎵</button>
+        <h2>ทุกความทรงจำ...</h2>
 
-    <!-- Password -->
-    <section id="password-screen" class="screen active">
+        <h3>พาเรามาหาเธอ 🤍</h3>
 
-        <div class="password-box">
+    </div>
 
-            <h1>💌</h1>
+    <div id="glass-heart">
 
-            <h2>To The One Who Makes My World Better</h2>
+        <div id="heart-fill">🤍</div>
 
-            <p>Fourwin ❤️</p>
+        <p>
+            แตะหัวใจเพื่อเริ่มต้นความทรงจำของเรา
+        </p>
 
-            <p>Made with Love by Oil</p>
+        <span>
+            Oil ♡ Fourwin
+        </span>
 
-            <input
-                type="password"
-                id="passwordInput"
-                placeholder="Enter Password"
-            >
+    </div>
 
-            <button onclick="checkPassword()">
-                Open Gift 🎁
-            </button>
+</section>
+
+<!-- ================= PASSWORD ================= -->
+
+<section id="password-screen" class="screen">
+
+    <div class="password-box">
+
+        <div class="big-heart">
+
+            <span id="mainHeart">
+                🤍
+            </span>
 
         </div>
 
-    </section>
+        <h2>
+            ถึงคนที่ทำให้โลกของเราน่าอยู่ขึ้น
+        </h2>
 
-    <!-- Gift Box -->
-    <section id="gift-screen" class="screen">
+        <p>
+            Fourwin ❤️
+        </p>
 
-        <div class="gift-container">
+        <div id="passwordDisplay">
+            ••••••
+        </div>
 
-            <div id="giftBox">
-                🎁
+        <div class="number-pad">
+
+            <button onclick="pressNumber('1')">1</button>
+            <button onclick="pressNumber('2')">2</button>
+            <button onclick="pressNumber('3')">3</button>
+
+            <button onclick="pressNumber('4')">4</button>
+            <button onclick="pressNumber('5')">5</button>
+            <button onclick="pressNumber('6')">6</button>
+
+            <button onclick="pressNumber('7')">7</button>
+            <button onclick="pressNumber('8')">8</button>
+            <button onclick="pressNumber('9')">9</button>
+
+            <button onclick="clearPassword()">♡</button>
+            <button onclick="pressNumber('0')">0</button>
+            <button onclick="deleteNumber()">⌫</button>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= GIFT ================= -->
+
+<section id="gift-screen" class="screen">
+
+    <div class="gift-container">
+
+        <div id="giftBox">
+
+            🎁
+
+        </div>
+
+        <h2>
+            เรามีบางอย่างอยากให้เธอ
+        </h2>
+
+        <p>
+            กดเปิดของขวัญสิ ❤️
+        </p>
+
+    </div>
+
+</section>
+
+<!-- ================= WELCOME ================= -->
+
+<section id="welcome-screen" class="screen">
+
+    <div class="content">
+
+        <h1>
+            💌 ยินดีต้อนรับนะคนเก่ง
+        </h1>
+
+        <p>
+
+            ขอบคุณที่เข้ามาเป็นส่วนหนึ่ง
+            ของชีวิตเรา
+
+        </p>
+
+        <button class="next-btn" onclick="goToTimeline()">
+
+            เริ่มดูความทรงจำของเรา →
+
+        </button>
+
+    </div>
+
+</section>
+
+<!-- ================= TIMELINE ================= -->
+
+<section id="timeline-screen" class="screen">
+
+    <div class="content">
+
+        <h1>💕 เรื่องราวของเรา</h1>
+
+        <div class="timeline">
+
+            <div class="event">
+
+                💬 6 ธันวาคม 2566
+
+                <br>
+
+                วันที่เราได้รู้จักกัน
+
             </div>
 
-            <p>Click the gift...</p>
+            <div class="event">
 
-        </div>
+                ❤️ 20 ธันวาคม 2566
 
-    </section>
+                <br>
 
-    <!-- Welcome -->
-    <section id="welcome-screen" class="screen">
-
-        <div class="content">
-
-            <h1>💌 Welcome Fourwin</h1>
-
-            <p>
-                Thank you for being part of my life.
-            </p>
-
-            <button class="next-btn" onclick="goToTimeline()">
-                Start Our Story →
-            </button>
-
-        </div>
-
-    </section>
-
-    <!-- Timeline -->
-    <section id="timeline-screen" class="screen">
-
-        <div class="content">
-
-            <h1>💕 Our Story</h1>
-
-            <div class="timeline">
-
-                <div class="event">
-                    💬 6 December 2023
-                    <br>
-                    The day we met
-                </div>
-
-                <div class="event">
-                    ❤️ 20 December 2023
-                    <br>
-                    The day we became us
-                </div>
-
-                <div class="event">
-                    ✨ Today
-                    <br>
-                    Still together
-                </div>
+                วันที่เราได้เป็นแฟนกัน
 
             </div>
 
-            <button class="next-btn">
-                Next →
-            </button>
+            <div class="event">
+
+                ✨ วันนี้
+
+                <br>
+
+                และเรายังอยู่ด้วยกัน
+
+            </div>
 
         </div>
 
-    </section>
+        <button class="next-btn">
 
-    <script src="script.js"></script>
+            ไปต่อ →
+
+        </button>
+
+    </div>
+
+</section>
+
+<script src="script.js"></script>
 
 </body>
 </html>
