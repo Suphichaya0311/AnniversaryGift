@@ -33,72 +33,49 @@ window.addEventListener("load", () => {
 
 });
 
-// ================= INTRO HEART =================
+// ================= INTRO PHOTO =================
 
-const heartFill =
-document.getElementById("heart-fill");
+const startPhoto =
+document.getElementById("startPhoto");
 
-let introStep = 0;
+if(startPhoto){
 
-const introHearts = [
-    "🤍",
-    "🩷",
-    "💖",
-    "❤️"
-];
+    startPhoto.addEventListener("click",()=>{
 
-if (heartFill) {
+        music.volume = 0;
 
-    heartFill.addEventListener("click", () => {
+        music.play();
 
-        introStep++;
+        isPlaying = true;
 
-        if (introStep < introHearts.length) {
+        let fade = setInterval(()=>{
 
-            heartFill.innerHTML =
-            introHearts[introStep];
+            if(music.volume < 0.9){
 
-        }
+                music.volume += 0.1;
 
-        if (introStep === 1) {
+            }else{
 
-            music.volume = 0;
+                clearInterval(fade);
 
-            music.play();
+            }
 
-            isPlaying = true;
+        },300);
 
-            let fade = setInterval(() => {
+        startPhoto.style.transform =
+        "scale(1.1)";
 
-                if (music.volume < 0.9) {
+        setTimeout(()=>{
 
-                    music.volume += 0.1;
+            document
+            .getElementById("intro-screen")
+            .classList.remove("active");
 
-                } else {
+            document
+            .getElementById("password-screen")
+            .classList.add("active");
 
-                    clearInterval(fade);
-
-                }
-
-            }, 300);
-
-        }
-
-        if (introStep >= 3) {
-
-            setTimeout(() => {
-
-                document
-                .getElementById("intro-screen")
-                .classList.remove("active");
-
-                document
-                .getElementById("password-screen")
-                .classList.add("active");
-
-            }, 700);
-
-        }
+        },1000);
 
     });
 
@@ -257,37 +234,3 @@ function createFlower() {
 }
 
 setInterval(createFlower, 1200);
-
-// ================= PHOTO FLOAT =================
-
-const photos =
-document.querySelectorAll(".heart-photo");
-
-photos.forEach(photo => {
-
-    const randomX =
-    (Math.random() * 1000) - 500;
-
-    const randomY =
-    (Math.random() * 800) - 400;
-
-    photo.style.transform =
-    `translate(${randomX}px,${randomY}px)
-     rotate(${Math.random()*90-45}deg)`;
-
-    photo.style.opacity = "0";
-
-});
-
-setTimeout(() => {
-
-    photos.forEach(photo => {
-
-        photo.style.opacity = "1";
-
-        photo.style.transform =
-        "translate(0,0) rotate(0deg)";
-
-    });
-
-}, 500);
