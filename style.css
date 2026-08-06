@@ -8,8 +8,16 @@
 
 body{
     font-family:'Itim',cursive;
-    background:#0f0b1d;
+
+    background:
+    radial-gradient(
+    circle at top,
+    #3d2859,
+    #1b1431,
+    #0f0b1d);
+
     overflow:hidden;
+
     color:white;
 }
 
@@ -124,143 +132,101 @@ body{
     }
 
 }
+/* ================= MAIN PHOTO ================= */
 
-/* ================= PHOTO HEART ================= */
-
-#photo-heart-container{
+#main-photo-start{
 
     position:relative;
 
-    width:700px;
-    height:500px;
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:10;
 
 }
 
-.heart-photo{
+#startPhoto{
 
-    position:absolute;
+    width:280px;
 
-    width:95px;
-    height:130px;
+    height:390px;
 
     object-fit:cover;
 
-    border:8px solid white;
+    border:10px solid white;
 
-    border-radius:12px;
+    border-radius:25px;
 
-    box-shadow:0 10px 25px rgba(0,0,0,.4);
+    cursor:pointer;
 
-    transition:1.5s;
+    box-shadow:
+    0 0 50px rgba(255,180,220,.8);
 
-}
+    animation:
+    floatPhoto 3s ease-in-out infinite;
 
-/* ตำแหน่งหัวใจ */
-
-.photo1{top:40px;left:250px;}
-.photo2{top:0px;left:170px;}
-.photo3{top:0px;left:330px;}
-.photo4{top:80px;left:120px;}
-.photo5{top:80px;left:380px;}
-
-.photo6{top:160px;left:80px;}
-.photo7{top:160px;left:420px;}
-
-.photo8{top:250px;left:150px;}
-.photo9{top:250px;left:350px;}
-
-.photo10{top:330px;left:210px;}
-.photo11{top:330px;left:300px;}
-
-.photo12{top:410px;left:250px;}
-
-.photo13{top:120px;left:250px;}
-.photo14{top:220px;left:250px;}
-.photo15{top:300px;left:250px;}
-
-/* ================= MESSAGE ================= */
-
-#intro-message{
-
-    margin-top:25px;
-
-    opacity:0;
-
-    animation:showText 2s forwards;
-    animation-delay:2s;
+    transition:.5s;
 
 }
 
-#intro-message h2{
+#startPhoto:hover{
 
-    color:#ffd5ec;
-    font-size:36px;
-
-}
-
-#intro-message h3{
-
-    margin-top:10px;
-    color:#ffffff;
+    transform:scale(1.05);
 
 }
 
-@keyframes showText{
+@keyframes floatPhoto{
 
-    from{
-        opacity:0;
-        transform:translateY(20px);
+    0%{
+        transform:translateY(0);
     }
 
-    to{
-        opacity:1;
+    50%{
+        transform:translateY(-12px);
+    }
+
+    100%{
         transform:translateY(0);
     }
 
 }
 
-/* ================= GLASS HEART ================= */
+#main-photo-start h2{
 
-#glass-heart{
+    margin-top:25px;
 
-    margin-top:35px;
+    color:#ffd5ec;
 
-    opacity:0;
-
-    animation:showHeart 2s forwards;
-    animation-delay:4s;
+    font-size:42px;
 
 }
 
-#heart-fill{
+#main-photo-start h3{
 
-    font-size:120px;
+    margin-top:10px;
 
-    cursor:pointer;
+    color:white;
 
-    transition:.4s;
-
-}
-
-#heart-fill:hover{
-
-    transform:scale(1.1);
+    font-size:28px;
 
 }
 
-#glass-heart p{
+#main-photo-start p{
 
     margin-top:15px;
 
     color:#ffd5ec;
 
-    font-size:22px;
+    font-size:20px;
 
 }
 
-#glass-heart span{
-
-    display:block;
+#main-photo-start span{
 
     margin-top:10px;
 
@@ -268,7 +234,52 @@ body{
 
 }
 
-@keyframes showHeart{
+.floating-heart{
+
+    position:absolute;
+
+    font-size:35px;
+
+    animation:floating 4s ease-in-out infinite;
+
+}
+
+.heart1{
+    left:-120px;
+    top:80px;
+}
+
+.heart2{
+    right:-120px;
+    top:120px;
+}
+
+.heart3{
+    left:-90px;
+    bottom:120px;
+}
+
+.heart4{
+    right:-100px;
+    bottom:100px;
+}
+
+@keyframes floating{
+
+    0%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-20px);
+    }
+
+    100%{
+        transform:translateY(0);
+    }
+
+}
+{
 
     from{
 
